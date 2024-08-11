@@ -2,7 +2,6 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-
         <!-- Toggler/collapsible button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +40,6 @@
   </div>
 </template>
 
-
 <style scoped>
 .navbar {
   padding: 10px;
@@ -53,6 +51,25 @@
   margin: 0 10px;
   padding: 5px 10px;
   font-family: Radio Canada Big;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00FF89;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-in-out; /* Increased duration and smooth easing */
+}
+
+.router-link-active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .nav-item {
@@ -62,14 +79,10 @@
   align-items: center;
 }
 
-.nav-link:hover,
-.router-link-active {
-  border-bottom: 2px solid #00FF89;
-}
-
 @media screen and (max-width: 420px) {
   .nav-item {
     margin: 10px;
   }
 }
 </style>
+
