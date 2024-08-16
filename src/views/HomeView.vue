@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div id="app">
     <div class="container">
       <h1>Energy Calculator</h1>
       <div class="form-group">
@@ -14,8 +14,10 @@
         <label for="energyUsed">Energy Used (kWh):</label>
         <input type="number" id="energyUsed" v-model.number="energyUsed" step="0.01" placeholder="Enter energy used">
       </div>
-      <button @click="calculateReturn">Calculate</button>
-      <button @click="fetchData">Fetch Data</button>
+      <div class="button-group">
+        <button @click="calculateReturn">Calculate</button>
+        <button @click="fetchData">Fetch Data</button>
+      </div>
       <div class="result">{{ resultMessage }}</div>
       <canvas id="energyChart" width="400" height="200"></canvas>
     </div>
@@ -39,7 +41,7 @@
         </table>
       </div>
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
@@ -73,7 +75,7 @@ export default {
 
       await this.$store.dispatch('fetchData', this.day);
 
-      this.resultMessage = `Data fetched: Energy Generated - ${this.capacity} kWh, Energy Used - ${this.energyUsed} kWh`;
+      this.resultMessage = `Data fetched: Energy Generated: ${this.capacity} kWh, Energy Used: ${this.energyUsed} kWh`;
 
       this.calculateReturn();
       this.updateChart();
@@ -123,11 +125,10 @@ export default {
 };
 </script>
 
-
 <style>
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #ffdd4f, #ff9a00);
+    background: linear-gradient(to right, #9ACDDA, #D90700); /* Updated gradient */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,93 +136,108 @@ body {
     width: 100%;
     margin: 0;
 }
+
 #app {
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
+
 .container {
     background: #ffffff; /* Light background for the calculator */
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    max-width: 600px;
+    max-width: 500px;
     width: 100%;
-    margin: 30px;
-  height: auto;
+    margin: 20px;
+    height: auto;
 }
+
 h1 {
     color: #333;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    background: linear-gradient(90deg, #f7a600, #fcb045); /* Gradient for heading */
+    background: linear-gradient(90deg, #9ACDDA, #D90700); /* Gradient for heading */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
     color: #555;
 }
+
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 14px;
 }
+
 .form-group input:focus {
-    border-color: #ff9a00; /* Solar theme color */
+    border-color: #D90700; /* Red for focus border */
     outline: none;
-    box-shadow: 0 0 5px rgba(255, 154, 0, 0.5);
+    box-shadow: 0 0 5px rgba(217, 7, 0, 0.5);
 }
+
 .button-group {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Space between buttons */
+    gap: 8px;
 }
+
 button {
-    background-color: #ff9a00; /* Solar theme color */
+    background-color: #D90700; /* Red for buttons */
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 16px;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 button:hover {
-    background-color: #e87c00; /* Darker shade for hover */
+    background-color: #a80000; /* Darker shade of red for hover */
 }
+
 .result {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #28a745; /* Green for success messages */
     text-align: center;
 }
+
 #error {
-    color: #e94e77; /* Red for errors */
+    color: #D90700; /* Red for errors */
     font-size: 16px;
     font-weight: 500;
 }
+
 .success {
     color: #2ecc71; /* Green for success messages */
     font-size: 16px;
     font-weight: 500;
 }
+
 #register {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
 }
+
 #ticket {
     background: #ffffff; /* White background for the ticket */
     margin: auto;
@@ -229,28 +245,35 @@ button:hover {
     border-radius: 12px;
     box-shadow: 0 0 5px rgba(0,0,0,.25);
 }
+
 #ticket h1 {
     text-align: center;
-    color: #ff9a00; /* Solar theme color for heading */
+    color: #D90700; /* Red for heading */
 }
+
 #ticket table {
-    font-family: 'Courier New', Courier, monospace; /* Monospace for table font */
+    font-family: 'Courier New', Courier, monospace;
     width: 100%;
     border-collapse: collapse;
 }
+
 #ticket td, #ticket th {
-    padding: 10px;
+    padding: 8px;
 }
+
 #ticket th {
     text-align: left;
-    background-color: #f7f7f7; /* Light background for header */
+    background-color: #f7f7f7;
 }
+
 #ticket td, #ticket #total {
     text-align: left;
 }
+
 #ticket tfoot th {
     border-top: 1px solid #ddd;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #f7f7f7;
 }
+
 </style>
