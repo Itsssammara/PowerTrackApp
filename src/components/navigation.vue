@@ -18,7 +18,7 @@
               <router-link :to="{ name: 'Energy' }" class="nav-link">ENERGY DATA</router-link>
             </li>
             <li class="nav-item">
-              <router-link :to="{ name: 'Reports' }" class="nav-link">REPORTS</router-link>
+              <router-link :to="{ name: 'Calculate' }" class="nav-link">CALCULATE</router-link>
             </li>
             <li class="nav-item">
               <router-link :to="{ name: 'Help' }" class="nav-link">HELP</router-link>
@@ -27,16 +27,13 @@
               <router-link :to="{ name: 'Login' }" class="nav-link">LOGIN</router-link>
             </li>
             <li class="nav-item">
-              <router-link :to="{ name: 'Sign Up' }" class="nav-link">SIGN UP</router-link>
-            </li>
-            <li class="nav-item">
               <router-link :to="{ name: 'Contact' }" class="nav-link">CONTACT</router-link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <router-view/>
+    <!-- <router-view/> -->
   </div>
 </template>
 
