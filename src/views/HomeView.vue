@@ -15,7 +15,6 @@
         <input type="number" id="energyUsed" v-model.number="energyUsed" step="0.01" placeholder="Enter energy used">
       </div>
       <div class="button-group">
-        <button @click="calculateReturn">Calculate</button>
         <button @click="fetchData">Fetch Data</button>
       </div>
       <div class="result">{{ resultMessage }}</div>
@@ -128,7 +127,7 @@ export default {
 <style>
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #9ACDDA, #D90700); /* Updated gradient */
+    background: linear-gradient(to right, #00F3F0, #053BFD); /* Light blue to dark blue gradient */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +145,7 @@ body {
 }
 
 .container {
-    background: #ffffff; /* Light background for the calculator */
+    background: #FFFF; /* White background for the calculator */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -157,11 +156,11 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #023B21;
     margin-bottom: 20px;
     font-size: 22px;
     font-weight: 600;
-    background: linear-gradient(90deg, #9ACDDA, #D90700); /* Gradient for heading */
+    background: linear-gradient(90deg, #00F3F0, #053BFD); /* Gradient for heading */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -174,7 +173,7 @@ h1 {
     display: block;
     margin-bottom: 6px;
     font-weight: 500;
-    color: #555;
+    color: #023B21;
 }
 
 .form-group input {
@@ -187,9 +186,9 @@ h1 {
 }
 
 .form-group input:focus {
-    border-color: #D90700; /* Red for focus border */
+    border-color: #00FF89; /* Light green for focus border */
     outline: none;
-    box-shadow: 0 0 5px rgba(217, 7, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 255, 137, 0.5);
 }
 
 .button-group {
@@ -199,7 +198,7 @@ h1 {
 }
 
 button {
-    background-color: #D90700; /* Red for buttons */
+    background-color: #023B21; /* Dark green for buttons */
     color: white;
     border: none;
     padding: 10px 16px;
@@ -210,25 +209,25 @@ button {
 }
 
 button:hover {
-    background-color: #a80000; /* Darker shade of red for hover */
+    background-color: #00FF89; /* Light green for hover */
 }
 
 .result {
     margin-top: 15px;
     font-size: 16px;
     font-weight: 600;
-    color: #28a745; /* Green for success messages */
+    color: #00FF89; /* Light green for success messages */
     text-align: center;
 }
 
 #error {
-    color: #D90700; /* Red for errors */
+    color: #023B21; /* Dark green for errors */
     font-size: 16px;
     font-weight: 500;
 }
 
 .success {
-    color: #2ecc71; /* Green for success messages */
+    color: #00FF89; /* Light green for success messages */
     font-size: 16px;
     font-weight: 500;
 }
@@ -239,7 +238,7 @@ button:hover {
 }
 
 #ticket {
-    background: #ffffff; /* White background for the ticket */
+    background: #FFFF; /* White background for the ticket */
     margin: auto;
     padding: 1em;
     border-radius: 12px;
@@ -248,7 +247,7 @@ button:hover {
 
 #ticket h1 {
     text-align: center;
-    color: #D90700; /* Red for heading */
+    color: #023B21; /* Dark green for heading */
 }
 
 #ticket table {
@@ -275,5 +274,4 @@ button:hover {
     font-size: 14px;
     background-color: #f7f7f7;
 }
-
 </style>
