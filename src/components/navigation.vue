@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-pink">
       <div class="container">
         <!-- Toggler/collapsible button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -43,8 +43,12 @@
   text-align: center;
 }
 
+.custom-pink {
+  background-color: #978909; /* Hot Pink color */
+}
+
 .nav-link {
-  color: rgb(255, 255, 255);
+  color: #FFFFFF; /* White text color */
   margin: 0 10px;
   padding: 5px 10px;
   font-family: Radio Canada Big;
@@ -58,7 +62,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: #00FF89;
+  background-color: #ffffff;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.4s ease-in-out; /* Increased duration and smooth easing */
@@ -82,4 +86,3 @@
   }
 }
 </style>
-

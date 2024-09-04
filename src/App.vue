@@ -1,45 +1,45 @@
 <template>
-  <navigation/>
- 
-  <router-view/>
-  
-  <!-- <Footer/> -->
- </template>
- 
- <script>
- import navigation from '@/components/navigation.vue'
-//  import Footer from '@/components/footer.vue'
+  <div class="custom-background">
+    <navigation />
+    <router-view />
+    <Footer/>
+  </div>
+</template>
 
- export default {
-   name: 'HomeView',
-   components: {
+<script>
+import navigation from '@/components/navigation.vue';
+import Footer from '@/components/footer.vue';
+
+export default {
+  name: 'HomeView',
+  components: {
     navigation,
-    // Footer
-   }
- }
- </script>
- 
- <style>
- #app {
-   font-family: Avenir, Helvetica, Arial, sans-serif;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-align: center;
-   color: #2c3e50;
- }
- 
- nav {
-   padding: 30px;
- }
- 
- nav a {
-   font-weight: bold;
-   color: #2c3e50;
- }
- 
- nav a.router-link-exact-active {
-   color: #42b983;
- }
- 
- </style>
- 
+    Footer
+  },
+};
+</script>
+
+<style scoped>
+.custom-background {
+  background-image: url('https://i.ibb.co/17VgCPP/powrtrackpic.png');
+  background-size: cover; 
+  background-position: center;
+  height: 100vh; 
+}
+
+/* Uncomment and fix styles if needed */
+/* 
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+} 
+*/
+</style>
